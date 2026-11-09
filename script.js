@@ -14,3 +14,16 @@ botaoTema.addEventListener("click", () => {
     botaoTema.textContent = novoTema === "dark" ? "✹ Tema claro" : "☾ Tema escuro";
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+    //Verificar se tem tema salvo
+    const temaSalvo = localStorage.getItem("tema");
+
+    //Se for dark, adiciona a classe e altera o botão
+    if(temaSalvo === "dark"){
+        document.body.classList.add("dark");
+        botaoTema.textContent = "✹ Tema claro";
+    }else {
+        //Caso contrario é light e botao deve mudar pra dark
+        botaoTema.textContent = "☾ Tema escuro";
+    }
+})
